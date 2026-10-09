@@ -52,6 +52,27 @@ namespace LibraryWebApi.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("LibraryWebApi.Models.Libraries", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Libraries");
+                });
+
             modelBuilder.Entity("LibraryWebApi.Models.Member", b =>
                 {
                     b.Property<int>("Id")
