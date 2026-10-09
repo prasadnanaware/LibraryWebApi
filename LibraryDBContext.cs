@@ -10,5 +10,7 @@ namespace LibraryWebApi.Data
         {
         }
         public DbSet<Book> Books { get; set; }
+
+        public DbSet<Member> Members { get; set; }
     }
 }
